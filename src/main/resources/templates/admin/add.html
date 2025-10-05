@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Article</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<h1>Add Article</h1>
+
+<form action="#" th:action="@{/admin/add}" th:object="${article}" method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" th:field="*{title}" required/><br/><br/>
+
+    <label for="content">Content:</label><br/>
+    <textarea id="content" th:field="*{content}" rows="10" cols="60" required></textarea><br/><br/>
+
+    <button type="submit">💾 Save</button>
+    <a href="/admin/dashboard">Cancel</a>
+</form>
+
+</body>
+</html>
